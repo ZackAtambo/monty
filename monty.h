@@ -11,7 +11,7 @@
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
- * @n: integer
+ * @number: integer
  * @prev: points to the previous element of the stack (or queue)
  * @next: points to the next element of the stack (or queue)
  *
@@ -20,7 +20,7 @@
  */
 typedef struct stack_s
 {
-        int n;
+        int number;
         struct stack_s *prev;
         struct stack_s *next;
 } stack_t;
@@ -28,7 +28,7 @@ typedef struct stack_s
 /**
  * struct instruction_s - opcode and its function
  * @opcode: the opcode
- * @f: function to handle the opcode
+ * @fun: function to handle the opcode
  *
  * Description: opcode and its function
  * for stack, queues, LIFO, FIFO
@@ -36,16 +36,16 @@ typedef struct stack_s
 typedef struct instruction_s
 {
         char *opcode;
-        void (*f)(stack_t **stack, unsigned int line_number);
+        void (*fun)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
 extern stack_t *head;
 typedef void (*op_func)(stack_t **, unsigned int);
 
 /*file operations*/
-void open_file(char *file_name);
+void openfile(char *f_name);
 int parse_line(char *buffer, int line_number, int format);
-void read_file(FILE *);
+void read_f(FILE *);
 int len_chars(FILE *);
 void find_func(char *, char *, int, int);
 
@@ -76,9 +76,9 @@ void print_str(stack_t **, unsigned int);
 void rotl(stack_t **, unsigned int);
 
 /*Error hanlding*/
-void err(int error_code, ...);
-void more_err(int error_code, ...);
-void string_err(int error_code, ...);
+void er(int error_code, ...);
+void more_er(int error_code, ...);
+void string_er(int error_code, ...);
 void rotr(stack_t **, unsigned int);
 
 #endif

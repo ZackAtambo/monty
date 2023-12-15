@@ -10,20 +10,20 @@ void print_char(stack_t **stack, unsigned int line_number)
 	int ascii;
 
 	if (stack == NULL || *stack == NULL)
-		string_err(11, line_number);
+		string_er(11, line_number);
 
-	ascii = (*stack)->n;
+	ascii = (*stack)->number;
 	if (ascii < 0 || ascii > 127)
-		string_err(10, line_number);
+		string_er(10, line_number);
 	printf("%c\n", ascii);
 }
 
 /**
  * print_str - Prints a string.
  * @stack: Pointer to a pointer pointing to top node of the stack.
- * @ln: Interger representing the line number of of the opcode.
+ * @line: Interger representing the line number of of the opcode.
  */
-void print_str(stack_t **stack, __attribute__((unused))unsigned int ln)
+void print_str(stack_t **stack, __attribute__((unused))unsigned int line)
 {
 	int ascii;
 	stack_t *tmp;
@@ -37,7 +37,7 @@ void print_str(stack_t **stack, __attribute__((unused))unsigned int ln)
 	tmp = *stack;
 	while (tmp != NULL)
 	{
-		ascii = tmp->n;
+		ascii = tmp->number;
 		if (ascii <= 0 || ascii > 127)
 			break;
 		printf("%c", ascii);
@@ -49,9 +49,9 @@ void print_str(stack_t **stack, __attribute__((unused))unsigned int ln)
 /**
  * rotl - Rotates the first node of the stack to the bottom.
  * @stack: Pointer to a pointer pointing to top node of the stack.
- * @ln: Interger representing the line number of of the opcode.
+ * @line: Interger representing the line number of of the opcode.
  */
-void rotl(stack_t **stack, __attribute__((unused))unsigned int ln)
+void rotl(stack_t **stack, __attribute__((unused))unsigned int line)
 {
 	stack_t *tmp;
 
@@ -73,9 +73,9 @@ void rotl(stack_t **stack, __attribute__((unused))unsigned int ln)
 /**
  * rotr - Rotates the last node of the stack to the top.
  * @stack: Pointer to a pointer pointing to top node of the stack.
- * @ln: Interger representing the line number of of the opcode.
+ * @line: Interger representing the line number of of the opcode.
  */
-void rotr(stack_t **stack, __attribute__((unused))unsigned int ln)
+void rotr(stack_t **stack, __attribute__((unused))unsigned int line)
 {
 	stack_t *tmp;
 

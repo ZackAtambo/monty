@@ -1,7 +1,7 @@
 #include "monty.h"
 
 /**
- * err - Prints appropiate error messages determined by their error code.
+ * er - Prints appropiate error messages determined by their error code.
  * @error_code: The error codes are the following:
  * (1) => The user does not give any file or more than one file to the program.
  * (2) => The file provided is not a file that can be opened or read.
@@ -12,7 +12,7 @@
  * (7) => When the stack it empty for pop.
  * (8) => When stack is too short for operation.
  */
-void err(int error_code, ...)
+void er(int error_code, ...)
 {
 	va_list ag;
 	char *op;
@@ -47,14 +47,14 @@ void err(int error_code, ...)
 }
 
 /**
- * more_err - handles errors.
+ * more_er - handles errors.
  * @error_code: The error codes are the following:
  * (6) => When the stack it empty for pint.
  * (7) => When the stack it empty for pop.
  * (8) => When stack is too short for operation.
  * (9) => Division by zero.
  */
-void more_err(int error_code, ...)
+void more_er(int error_code, ...)
 {
 	va_list ag;
 	char *op;
@@ -88,12 +88,12 @@ void more_err(int error_code, ...)
 }
 
 /**
- * string_err - handles errors.
+ * string_er - handles errors.
  * @error_code: The error codes are the following:
  * (10) ~> The number inside a node is outside ASCII bounds.
  * (11) ~> The stack is empty.
  */
-void string_err(int error_code, ...)
+void string_er(int error_code, ...)
 {
 	va_list ag;
 	int l_num;
